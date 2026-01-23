@@ -11,12 +11,14 @@ import Quizz from './Quizz';
 import Gym from './Gym';
 import ImageSVG from './ImageSVG';
 import AiPhotostock from './AiPhotostock';
+import ThreeJS from './ThreeJS';
+import ClassroomScene from './ThreeJS';
 
 
 function App() {
   return (
     <div className="App">
-      <div className="container-3d">
+      {/* <div className="container-3d">
         <div className="card-3d"><Fork /></div>
         <div className="card-3d"><Fish /></div>
         <div className="card-3d"><Quizz /></div>
@@ -25,8 +27,7 @@ function App() {
         <div className="card-3d"><Cat /></div>
         <div className="card-3d"><Gym /></div>
         <div className="card-3d"><AiPhotostock /></div>
-        {/* <div className="card-3d"><ImageSVG /></div> */}
-      </div>
+      </div> */}
       
 
      
@@ -36,6 +37,7 @@ function App() {
       {/* <Slides /> */}
       
       {/* <TextAnimation /> */}
+      <ClassroomScene />
     </div>
   );
 }
