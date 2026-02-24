@@ -18,7 +18,7 @@ function generateShapes(){
         addTo: illo,
         // no path set, default to single point
         stroke: 70,
-        color: '#b386d1',
+        color: '#ff8968',
       });
 
       let eye = new Zdog.Ellipse({
@@ -114,8 +114,8 @@ function generateShapes(){
         length: 50,
         rotate: { x: Zdog.TAU/4 },
         stroke: false,
-        color: '#b386d1',
-        backface: '#b386d1',
+        color: '#ff8968',
+        backface: '#ff8968',
       });
 
       let ear2 = new Zdog.Cone({
@@ -125,8 +125,8 @@ function generateShapes(){
         length: 50,
         rotate: { x: Zdog.TAU/4 },
         stroke: false,
-        color: '#b386d1',
-        backface: '#b386d1',
+        color: '#ff8968',
+        backface: '#ff8968',
       });
 
       //Cat Body
@@ -137,17 +137,37 @@ function generateShapes(){
         length: 120,
         rotate: { x: Zdog.TAU/4 },
         stroke: false,
-        color: '#b386d1',
+        color: '#ff8968',
         backface: '#C25',
       });
 
+      // let tail = new Zdog.Shape({
+      //   addTo: body,
+      //   path: [ { y: 10 }, { y: -48 } ],
+      //   translate: { x: 0, y: -50, z: 20 },
+      //   color: '#ff8968',
+      //   rotate: { x: -Zdog.TAU/5 },
+      //   stroke: 12,
+      // });
+
       let tail = new Zdog.Shape({
         addTo: body,
-        path: [ { y: 10 }, { y: -48 } ],
-        translate: { x: 0, y: -50, z: 20 },
-        color: '#b386d1',
-        rotate: { x: -Zdog.TAU/5 },
+        path: [
+          { y: -10 },   // start
+          { arc: [
+            { x:  20, y: 10 }, // corner
+            { x:  20, y:  20 }, // end point
+          ]},
+          { arc: [ // start next arc from last end point
+            { x:  20, y:  60 }, // corner
+            { x:  60, y:  60 }, // end point
+          ]},
+        ],
+        closed: false,
+        translate: { x: 0, y: -40, z: 20 },
+        rotate: { x: Zdog.TAU/5, y: Zdog.TAU/5 },
         stroke: 12,
+        color: '#ff8968',
       });
 
       let foot = new Zdog.Shape({
@@ -155,7 +175,7 @@ function generateShapes(){
         // no path set, default to single point
         stroke: 30,
         translate: {z: 45, y: 110, x: 30},
-        color: '#b386d1',
+        color: '#ff8968',
       });
       foot.copy({
         translate: {z: 45, y: 110, x: -30},
@@ -168,7 +188,7 @@ function generateShapes(){
     //     length: 60,
     //     rotate: { x: Zdog.TAU/4 },
     //     stroke: false,
-    //     color: '#b386d1',
+    //     color: '#ff8968',
     //     backface: '#C25',
     //   });
 
@@ -192,7 +212,7 @@ function generateShapes(){
     //     translate: {y: 75},
     //     textAlign: 'center',
     //     textBaseline: 'middle',
-    //     color: '#b386d1',
+    //     color: '#ff8968',
     //     fill: true
     //   });
       
